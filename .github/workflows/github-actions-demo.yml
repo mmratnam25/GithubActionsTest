@@ -28,9 +28,11 @@ jobs:
           
       - name: Install NPM
         run: |
-          sudo npm install
+          rm -rf node_modules
+          rm package-lock.json
+          npm install
       # Install the SFDX CLI using npm command
       - name: Install the SFDX CLI
         run: |
-          sudo npm install sfdx-cli --global
-          sfdx force --help 
+          npm install sfdx-cli --global
+          sfdx force --help
